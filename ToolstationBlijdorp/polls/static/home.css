@@ -9,3 +9,28 @@ h1 {
   right: 400px;
   font-family: 'Fantasy';
 }
+
+.div1 {
+ background-color: powderblue;
+  border-radius: 10px;
+  border: 5px solid black;
+ 
+  width: 50%;
+  height: 200px;
+  width: 30%;
+  
+  margin-left: 100px;
+  margin-top: -10px;
+}
+.div2 {
+  background-color: blue;
+  border-radius: 10px;
+  border: 5px solid black;
+  height: 200px;
+  width: 30%;
+ 
+  margin-left: 700px;
+  margin-right: 200px;
+  top: 40px;
+  float: left;
+}
