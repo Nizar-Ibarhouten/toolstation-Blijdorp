@@ -1,0 +1,11 @@
+h1 {
+  display: inline; /* the default for span */
+  padding: 10px;
+  border: 20px solid rgb(20, 18, 27);  
+  background-color: gray;
+  color: rgb(20, 18, 27);
+  border-radius: 120px;
+  position: absolute;
+  right: 400px;
+  font-family: 'Fantasy';
+}
