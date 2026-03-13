@@ -1,6 +1,6 @@
 from django import forms
 
 
-def register():
+class register(forms.Form):
     name = forms.CharField(label="name",max_length=100)
     

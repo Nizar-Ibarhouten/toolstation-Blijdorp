@@ -9,10 +9,13 @@
   <h1>hey there</h1>
   <h2>register here</h2>
 
-  <form action="/name" method="post">
+  <form action="name" method="post">
+    {% csrf_token %}
     <label for="name">Your name: </label>
-    <input id="name" type="text" name="name" maxlength="100" required >
+    <input id="name" type="text" name="name" maxlength="100" value="{{ current_name }}" required >
     <input type="submit" value="OK">
 </form>
+
+
 </body>
 </html>
