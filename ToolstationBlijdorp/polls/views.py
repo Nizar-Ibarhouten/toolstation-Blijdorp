@@ -16,12 +16,12 @@ def index3(request3):
 
 
 def get_name(request):
-    username = request.POST.get('username','')
+    username = request.POST.get('name','')
     if request.method == "POST":
-        form = register(request.POST)
+        form = register(request.POST.get)
         if form.is_valid():
             return HttpResponseRedirect("/thanks/")
-    else:
+    if request.method == "GET":
         form = register()
     
     return render(request,"name.html",{"form":form})
