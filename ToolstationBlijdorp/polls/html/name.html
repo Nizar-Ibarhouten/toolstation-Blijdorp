@@ -7,9 +7,11 @@
 <body>
   <h1>name is not good</h1>
 
-  <form action="/name/" method="GET">
- 
+  <form action="/name" method="GET">
+    {% csrf_token %}
+
     {{ form }}
+    {{ name }}
     <input type="submit" value="Submit">
 
 </form>
