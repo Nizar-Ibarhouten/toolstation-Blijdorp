@@ -30,14 +30,16 @@ def get_name(request):
         form = register(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            name = Names().User_names
             name1 = request.POST.get("name")
+            name = Names(User_names=name1).save()
+            names = Names.User_names
+
             
-            if name == "":
+            if name1:
                 content['name'] = name1
-                print("True", name,name1)
+                print("True", names,name1)
             else: 
-                print(name,"hierzo")
+                print(names,"hierzo",name1)
             
             return render(request, "name.html", {"content":content["name"]})
 
