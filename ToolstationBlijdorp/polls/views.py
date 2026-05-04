@@ -29,9 +29,10 @@ def get_name(request):
         form = register(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            name = Names()
-            if name == "Nizar":
-                print("True")
+            name = Names().User_names
+            if name == "":
+    
+                print("True", name)
             else: 
                 print(name,"hierzo")
             
@@ -40,7 +41,7 @@ def get_name(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = register()
-        
+        Imam = "Mohamed"
 
-    return render(request, "name.html", {"form": form})
+    return render(request, "name.html", {"value": Imam})
 
