@@ -10,8 +10,8 @@
   <h2>register here</h2>
 
    
-<form action="name" method="post">
-  {% csrf_token %}
+<form action="/name" method="post">
+    {% csrf_token %}
     <label for="name">Your name: </label>
     <input id="name" type="text" name="name" >
     <input type="submit" value="OK">

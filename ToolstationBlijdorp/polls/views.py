@@ -23,6 +23,7 @@ def index3(request3):
 
 
 def get_name(request):
+    content = {}
     # if this is a POST request we need to process the form data
     if request.method == "POST":
         # create a form instance and populate it with data from the request:
@@ -30,18 +31,19 @@ def get_name(request):
         # check whether it's valid:
         if form.is_valid():
             name = Names().User_names
+            name1 = request.POST.get("name")
+            
             if name == "":
-    
-                print("True", name)
+                content['name'] = name1
+                print("True", name,name1)
             else: 
                 print(name,"hierzo")
             
-            return HttpResponseRedirect("/name")
+            return render(request, "name.html", {"content":content["name"]})
 
     # if a GET (or any other method) we'll create a blank form
-    else:
-        form = register()
-        Imam = "Mohamed"
+  
+    
 
-    return render(request, "name.html", {"value": Imam})
+    return render(request, "name.html", {"content":content})
 
