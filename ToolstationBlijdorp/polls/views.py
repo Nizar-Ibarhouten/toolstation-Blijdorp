@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import register
 
-
+from .models import Names
 
 from django.views.decorators.csrf import csrf_protect
 
@@ -13,15 +13,15 @@ from django.views.decorators.csrf import csrf_protect
 
 def index2(request):
     
-    return render(request,"polls/html/homepage.html")
+    return render(request,"homepage.html")
 
 
 
 def index3(request3):
     
-    return render(request3,"polls/html/login.html")
+    return render(request3,"login.html")
 
-@csrf_protect
+
 def get_name(request):
     # if this is a POST request we need to process the form data
     if request.method == "POST":
@@ -29,9 +29,12 @@ def get_name(request):
         form = register(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
+            name = Names()
+            if name == "Nizar":
+                print("True")
+            else: 
+                print(name,"hierzo")
+            
             return HttpResponseRedirect("/name")
 
     # if a GET (or any other method) we'll create a blank form
@@ -39,5 +42,5 @@ def get_name(request):
         form = register()
         
 
-    return render(request, "polls/html/name.html", {"form": form})
+    return render(request, "name.html", {"form": form})
 
