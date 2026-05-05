@@ -24,6 +24,10 @@ def index3(request3):
 
 def get_name(request):
     content = {}
+    names2 = list(Names.objects.all())
+    for i in names2:
+        print(i)
+        
     # if this is a POST request we need to process the form data
     if request.method == "POST":
         # create a form instance and populate it with data from the request:
@@ -32,7 +36,9 @@ def get_name(request):
         if form.is_valid():
             name1 = request.POST.get("name")
             name = Names(User_names=name1).save()
-            names = Names.User_names
+            names = list(Names.objects.all())
+            namen = []
+            
 
             
             if name1:
@@ -41,11 +47,11 @@ def get_name(request):
             else: 
                 print(names,"hierzo",name1)
             
-            return render(request, "name.html", {"content":content["name"]})
+            return render(request, "name.html", {"content":names})
 
     # if a GET (or any other method) we'll create a blank form
   
     
 
-    return render(request, "name.html", {"content":content})
+    return render(request, "name.html", {"content":names2})
 
