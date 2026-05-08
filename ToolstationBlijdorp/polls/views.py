@@ -21,10 +21,17 @@ def index3(request3):
     
     return render(request3,"login.html")
 
+def update_name():
+    x = Names.objects.all()[0]
+    print(x)
+    x.User_names = "Zaza"
+    x.save()
+    print(x,"yatana")
 
 def get_name(request):
     content = {}
     names2 = list(Names.objects.all())
+    update_name()
     for i in names2:
         print(i)
         
@@ -39,7 +46,6 @@ def get_name(request):
             names = list(Names.objects.all())
             namen = []
             
-
             
             if name1:
                 content['name'] = name1
@@ -49,7 +55,6 @@ def get_name(request):
             
             return render(request, "name.html", {"content":names})
 
-    # if a GET (or any other method) we'll create a blank form
   
     
 
