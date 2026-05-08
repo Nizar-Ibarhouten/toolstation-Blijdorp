@@ -22,31 +22,30 @@ def index3(request3):
     return render(request3,"login.html")
 
 def update_name():
-    x = Names.objects.all()[0]
-    print(x)
-    x.User_names = "Zaza"
+    x = Names.objects.all()[1]
+    print(x,"hoena")
+    x.User_names = "Newgate"
     x.save()
-    print(x,"yatana")
+    
 
 def get_name(request):
+    
     content = {}
     names2 = list(Names.objects.all())
-    update_name()
+    
     for i in names2:
         print(i)
         
-    # if this is a POST request we need to process the form data
+   
     if request.method == "POST":
-        # create a form instance and populate it with data from the request:
+       
         form = register(request.POST)
-        # check whether it's valid:
+        
         if form.is_valid():
             name1 = request.POST.get("name")
             name = Names(User_names=name1).save()
             names = list(Names.objects.all())
-            namen = []
-            
-            
+    
             if name1:
                 content['name'] = name1
                 print("True", names,name1)
@@ -54,9 +53,8 @@ def get_name(request):
                 print(names,"hierzo",name1)
             
             return render(request, "name.html", {"content":names})
-
-  
-    
+        
+    update_name()
 
     return render(request, "name.html", {"content":names2})
 
