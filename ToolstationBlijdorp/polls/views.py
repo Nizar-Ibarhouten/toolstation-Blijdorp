@@ -7,7 +7,7 @@ from .forms import register
 from .models import Names
 
 from django.views.decorators.csrf import csrf_protect
-
+from rest_framework.response import Response
 
 
 
@@ -22,13 +22,19 @@ def index3(request3):
     return render(request3,"login.html")
 
 def update_name(request4):
+    alle_namen = list(Names.objects.all())
     x = Names.objects.all()[1]
     print(x,"hoena")
     x.User_names = "Newgate"
     x.save()
-    return render(request4,"updateName.html")
+    return render(request4,"updateName.html",{"alle_namen": alle_namen})
 
+def all_names(request22):
+    Namen = list(Names.objects.all())
     
+    return Response({"Content":Namen})
+
+
 
 def get_name(request):
     
