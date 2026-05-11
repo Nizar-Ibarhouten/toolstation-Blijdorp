@@ -21,11 +21,13 @@ def index3(request3):
     
     return render(request3,"login.html")
 
-def update_name():
+def update_name(request4):
     x = Names.objects.all()[1]
     print(x,"hoena")
     x.User_names = "Newgate"
     x.save()
+    return render(request4,"updateName.html")
+
     
 
 def get_name(request):
@@ -53,8 +55,7 @@ def get_name(request):
                 print(names,"hierzo",name1)
             
             return render(request, "name.html", {"content":names})
-        
-    update_name()
+     
 
     return render(request, "name.html", {"content":names2})
 
