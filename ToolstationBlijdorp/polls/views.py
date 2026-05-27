@@ -9,7 +9,8 @@ from .models import Names
 from django.views.decorators.csrf import csrf_protect
 from rest_framework.response import Response
 
-
+from rest_framework import generics
+from .serializers import NameSerializer
 
 def index2(request):
     
@@ -65,3 +66,7 @@ def get_name(request):
 
     return render(request, "name.html", {"content":names2})
 
+
+class NamesCreate(generics.ListCreateAPIView):
+    queryset = Names.objects.all()
+    serializer_class = NameSerializer
