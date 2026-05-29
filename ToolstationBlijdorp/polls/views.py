@@ -11,6 +11,7 @@ from rest_framework.response import Response
 
 from rest_framework import generics
 from .serializers import NameSerializer
+from django.core import serializers
 
 def index2(request):
     
@@ -65,6 +66,13 @@ def get_name(request):
      
 
     return render(request, "name.html", {"content":names2})
+
+def return_json(request):
+    name = "hallo there"
+    foos = Names.objects.all()
+    data = serializers.serialize('json', foos)
+    return HttpResponse(data,content_type="application/json")
+    
 
 
 class NamesCreate(generics.ListCreateAPIView):
