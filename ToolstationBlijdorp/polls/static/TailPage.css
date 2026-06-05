@@ -1,1 +1,29 @@
+.div22{
+  background-color: rgb(53, 169, 237);
+  height: 50px;
+  border: 2px solid yellow;
+  border-radius: 10px;
+  
+}
 
+body {
+  background-color: white
+}
+
+.div23{
+  background-color: azure;
+  height: 120px;
+  border: 5px solid red;
+  border-radius: 10px;
+
+}
+
+.div25{
+  background-color: azure;
+  height: 70px;
+  width: 50px;
+  border: 5px solid red;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+}

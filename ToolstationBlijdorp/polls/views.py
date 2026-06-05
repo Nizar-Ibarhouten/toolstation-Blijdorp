@@ -78,3 +78,7 @@ def return_json(request):
 class NamesCreate(generics.ListCreateAPIView):
     queryset = Names.objects.all()
     serializer_class = NameSerializer
+
+
+def Tail_Page(request):
+    return render(request, "TailPage.html")

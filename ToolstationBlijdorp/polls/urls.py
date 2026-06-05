@@ -15,5 +15,6 @@ urlpatterns = [
   path("updateName",views.update_name,name="updateName"),
   path('api1/', NamesCreate.as_view(), name='api1'),
   path("return_json",views.return_json,name="nana"),
+  path("Home",views.Tail_Page,name="mido"),
   
 ]
