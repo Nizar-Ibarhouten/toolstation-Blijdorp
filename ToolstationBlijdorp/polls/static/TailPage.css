@@ -27,3 +27,6 @@ body {
   margin-left: 20px;
   margin-top: 20px;
 }
+.text-large {
+  font-size: 150%;
+}

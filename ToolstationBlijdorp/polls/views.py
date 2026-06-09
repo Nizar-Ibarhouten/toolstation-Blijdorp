@@ -81,4 +81,5 @@ class NamesCreate(generics.ListCreateAPIView):
 
 
 def Tail_Page(request):
+    
     return render(request, "TailPage.html")
