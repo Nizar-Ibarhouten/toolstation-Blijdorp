@@ -1,5 +1,5 @@
 .div22{
-  background-color: rgb(53, 169, 237);
+  background-color: rgb(5, 161, 251);
   height: 70px;
   border: 2px solid yellow;
   border-radius: 10px;
@@ -8,28 +8,35 @@
 }
 
 body {
-  background-color: white
+  background-color: rgb(233, 236, 238)
 }
 
 .div23{
-  background-color: rgb(243, 243, 155);
+  background-color: white;
   height: 120px;
-  border: 5px solid red;
+  border: 5px solid rgb(13, 24, 229);
   border-radius: 10px;
   position: relative;
 }
 
 .button{
   right: 40px;
-  top: 10px;
+  bottom: 10px;
   position: absolute;
+  background-color: rgba(245, 245, 245, 0.64);
+  cursor: pointer;
+  border-radius: 5px;
+  border-width: 5px;
+  border-color: rgb(247, 7, 7);
+  width: 90px;
+  height: 30px;
 }
 
 .div25{
   background-color: azure;
   height: 70px;
   width: 50px;
-  border: 5px solid red;
+  border: 5px solid rgb(160, 165, 2);
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 20px;

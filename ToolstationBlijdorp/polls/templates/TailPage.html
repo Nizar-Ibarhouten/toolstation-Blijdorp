@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
   <div class="divLogo">
     <h1>Toolstation</h1>
   </div>
@@ -22,32 +23,21 @@
   <br>
 
   <div class="div23">
-      <button class="button">add</button>
-
+      
+      <button onclick="myFunction()" class="button">add</button>
     <div class="div25">
       
 
     </div>
   </div>
-
+  <p id="demo"></p>
   <br>
 
-  <div class="div23">
-    <button class="button">add</button>
-    <div class="div25">
-      
-    </div>
-  </div>
-
-  <br>
-
-  <div class="div23">
-      <button class="button">add</button>
-    <div class="div25">
-    </div>
-  </div>
-
-  <br>
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
 </body>
 
 </html>
