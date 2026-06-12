@@ -23,11 +23,8 @@
   <br>
 
   <div class="div23">
-      
-      <button onclick="myFunction()" class="button">add</button>
+      <button onclick="clickme()" class="button">add</button>
     <div class="div25">
-      
-
     </div>
   </div>
   <p id="demo"></p>
@@ -35,8 +32,13 @@
 
 <script>
 function myFunction() {
-  const div =  document.getElementById("demo").innerHTML = "<div class='div23'><button onclick='myFunction()' class='button'>add</button><div class='div25'></div></div>"
+  const div =  document.getElementById("demo").innerHTML = "<div class='div23'><div class='div25'></div></div>"
+ 
 }
+function clickme(){
+  const div2 =  document.getElementById("demo").innerHTML = `<div class='div23'><button onclick='${myFunction()}' class='button'>add</button><div class='div25'></div></div>`
+}
+
 </script>
 </body>
 
