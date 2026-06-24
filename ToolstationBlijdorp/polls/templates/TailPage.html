@@ -22,40 +22,32 @@
 
   <br>
 
-  <div class="div23">
-      <button onclick="clickme()" class="button">add</button>
-    <div class="div25">
+  <div id="div23" class="div23">
+      
+    <div id="div25" class="div25">
+       
     </div>
+    <button onclick="clickme()" class="button">add</button>
   </div>
-  <p id="demo"></p>
+  
   <br>
 
-  <button onclick="clickme()">pop</button>
-  <p id="new2"></p>
+
 
 <script>
 
 function clickme(){
+  const newDiv2 = document.createElement("div")
+  newDiv2.classList.add("div25")
+  document.getElementById("div25").appendChild(newDiv2)
+  
   const newDiv = document.createElement("div")
   newDiv.classList.add("div23")
 
-  document.body.appendChild(newDiv)
-
- 
-}
-
-function testfunction(){
-
-  const newHtml = document.createElement("h1")
-  newHtml.innerText = "hello there"
-  document.body.appendChild(newHtml)
-    
-
-
- 
-  
+  document.getElementById("div23").appendChild(newDiv)
   
 }
+
 
 </script>
 </body>

@@ -40,7 +40,7 @@ body {
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 20px;
-  position: absolute;
+  position: relative;
 }
 .text-large {
   font-size: 150%;
