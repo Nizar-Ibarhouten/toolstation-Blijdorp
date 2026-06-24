@@ -22,13 +22,14 @@
 
   <br>
 
-  <div id="div23" class="div23">
+  <div  id="div23" class="div23">
       
-    <div id="div25" class="div25">
-       
+    <div class="div25">
+
     </div>
-    <button onclick="clickme()" class="button">add</button>
+    <button id="button2" onclick="clickme()" class="button">add</button>
   </div>
+  <br>
   
   <br>
 
@@ -38,14 +39,20 @@
 
 function clickme(){
   const newDiv2 = document.createElement("div")
-  newDiv2.classList.add("div25")
-  document.getElementById("div25").appendChild(newDiv2)
-  
-  const newDiv = document.createElement("div")
-  newDiv.classList.add("div23")
+  newDiv2.classList.add("div23")
+  document.getElementById("div23").appendChild(newDiv2)
 
-  document.getElementById("div23").appendChild(newDiv)
-  
+  const addDiv = document.createElement("div")
+  addDiv.classList.add("div25")
+  document.getElementById("div23").appendChild(addDiv)
+
+
+  const button2 = document.createElement("button")
+  button2.classList.add("button")
+  button2.innerText = "add"
+  document.getElementById("button2").appendChild(button2)  
+
+
 }
 
 
