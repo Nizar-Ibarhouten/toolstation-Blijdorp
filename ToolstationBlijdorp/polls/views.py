@@ -12,7 +12,7 @@ from rest_framework.response import Response
 from rest_framework import generics
 from .serializers import NameSerializer
 from django.core import serializers
-
+import json
 def index2(request):
     
     return render(request,"homepage.html")
@@ -73,6 +73,15 @@ def return_json(request):
     data = serializers.serialize('json', foos)
     return HttpResponse(data,content_type="application/json")
     
+
+def return_products(request):
+    data = {
+        "name" : "bahco hamer",
+        "price": "20.99",
+        "weight": "250gr",
+        "quantity": "5"
+    }
+    return HttpResponse(json.dumps(data),content_type="application/json")
 
 
 class NamesCreate(generics.ListCreateAPIView):
