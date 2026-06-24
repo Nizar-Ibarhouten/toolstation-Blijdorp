@@ -75,12 +75,22 @@ def return_json(request):
     
 
 def return_products(request):
-    data = {
+    data = [{
         "name" : "bahco hamer",
         "price": "20.99",
         "weight": "250gr",
         "quantity": "5"
-    }
+    },
+    {"name" : "milwakee boor machine",
+        "price": "199.00",
+        "weight": "3 kg",
+        "quantity": "3"
+    },{
+        
+        "name" : "knipex waterpomptang",
+        "price": "30.99",
+        "weight": "300gr",
+        "quantity": "10"}]
     return HttpResponse(json.dumps(data),content_type="application/json")
 
 
