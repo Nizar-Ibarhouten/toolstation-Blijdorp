@@ -30,13 +30,31 @@
   <p id="demo"></p>
   <br>
 
+  <button onclick="clickme()">pop</button>
+  <p id="new2"></p>
+
 <script>
-function myFunction() {
-  const div =  document.getElementById("demo").innerHTML = "<div class='div23'><div class='div25'></div></div>"
+
+function clickme(){
+  const newDiv = document.createElement("div")
+  newDiv.classList.add("div23")
+
+  document.body.appendChild(newDiv)
+
  
 }
-function clickme(){
-  const div2 =  document.getElementById("demo").innerHTML = `<div class='div23'><button onclick='${myFunction()}' class='button'>add</button><div class='div25'></div></div>`
+
+function testfunction(){
+
+  const newHtml = document.createElement("h1")
+  newHtml.innerText = "hello there"
+  document.body.appendChild(newHtml)
+    
+
+
+ 
+  
+  
 }
 
 </script>
