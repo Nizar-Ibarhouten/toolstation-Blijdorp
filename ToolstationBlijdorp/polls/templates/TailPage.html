@@ -32,9 +32,15 @@
   <br>
   
   <br>
-
+<input type="text" placeholder="search">
 <button onclick="getProducts()">click</button>
-<div id="products"></div>
+
+
+<ul >    
+<p id="productsName"></p>   
+ <p id="productsPrice"></p>  
+  <p id="productsWeight"></p>
+</ul>
 
 
 
@@ -65,7 +71,12 @@ async function getProducts(){
     }
     const result = await response.json();
     console.log(result);
-    document.getElementById("products").append(JSON.stringify(result))
+    for (i=0;i<3;i++){
+      document.getElementById("productsName").append(result[i]["name"] + " ")
+      document.getElementById("productsPrice").append(result[i]["price"] + " ")
+      document.getElementById("productsWeight").append(result[i]["weight"] + " ")
+    }
+    
     
   }
   catch(error){
@@ -73,6 +84,9 @@ async function getProducts(){
   }
 }
 
+function searchProducts(){
+    console.log("hey")
+}
 
 </script>
 </body>
