@@ -32,7 +32,12 @@
   <br>
   
   <br>
-<input type="text" placeholder="search">
+<form>
+  <label for="name">Enter product</label> 
+  <input id="input3" type="text" value="">
+  <button id="button3">submit </button> 
+</form>
+
 <button onclick="getProducts()">click</button>
 
 
@@ -84,9 +89,14 @@ async function getProducts(){
   }
 }
 
-function searchProducts(){
-    console.log("hey")
-}
+
+const x = document.getElementById("input3");
+
+x.addEventListener("input", function(e){
+  console.log(e.target.value)
+})
+
+
 
 </script>
 </body>
