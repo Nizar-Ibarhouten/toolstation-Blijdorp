@@ -47,7 +47,7 @@
   <p id="productsWeight"></p>
 </ul>
 
-
+<p  id="inputValue"></p>
 
 <script>
 
@@ -94,6 +94,21 @@ const x = document.getElementById("input3");
 
 x.addEventListener("input", function(e){
   console.log(e.target.value)
+  inpValue = document.getElementById("inputValue")
+  if ("input"){
+    inpValue.classList.add("div23")
+    inpValue.append(e.target.value)
+  }
+  if (e.target.value == ""){
+    inpValue.classList.remove("div23")
+    inpValue.remove(e.target.value)
+  }
+  else{
+    inpValue.classList.add("div23")
+    inpValue.append(e.target.value)
+  }
+  
+  
 })
 
 
