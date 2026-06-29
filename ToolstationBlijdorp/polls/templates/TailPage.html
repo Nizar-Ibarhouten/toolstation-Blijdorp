@@ -49,7 +49,7 @@
 
 <p  id="inputValue"></p>
 
-<script>
+<script lang="Javascript" >
 
 function clickme(){
   const newDiv2 = document.createElement("div")
@@ -95,19 +95,18 @@ const x = document.getElementById("input3");
 x.addEventListener("input", function(e){
   console.log(e.target.value)
   inpValue = document.getElementById("inputValue")
-  if ("input"){
-    inpValue.classList.add("div23")
-    inpValue.append(e.target.value)
+  inpValue.append(e.target.value)
+
+  if (e.target.value != ""){
+     inpValue.style.display = "block";
   }
   if (e.target.value == ""){
-    inpValue.classList.remove("div23")
-    inpValue.remove(e.target.value)
-  }
-  else{
-    inpValue.classList.add("div23")
-    inpValue.append(e.target.value)
+    inpValue.style.display = "none";
+    
   }
   
+  
+  console.log(e.target.value)
   
 })
 
