@@ -93,21 +93,12 @@ async function getProducts(){
 const x = document.getElementById("input3");
 
 x.addEventListener("input", function(e){
-  console.log(e.target.value)
-  inpValue = document.getElementById("inputValue")
-  inpValue.append(e.target.value)
 
-  if (e.target.value != ""){
-     inpValue.style.display = "block";
-  }
-  if (e.target.value == ""){
-    inpValue.style.display = "none";
-    
-  }
+  inpValue = document.getElementById("inputValue")
   
-  
+  inpValue.innerText = `${e.target.value}`
+
   console.log(e.target.value)
-  
 })
 
 
