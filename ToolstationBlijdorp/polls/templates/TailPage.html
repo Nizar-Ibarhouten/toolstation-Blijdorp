@@ -97,7 +97,13 @@ x.addEventListener("input", function(e){
   inpValue = document.getElementById("inputValue")
   
   inpValue.innerText = `${e.target.value}`
-
+  inpValue.classList.add("div23")
+  if (e.target.value == ""){
+    inpValue.classList.remove("div23")
+  }
+  if (e.target.value != ""){
+    inpValue.classList.add("div23")
+  }
   console.log(e.target.value)
 })
 
