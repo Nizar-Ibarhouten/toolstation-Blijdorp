@@ -81,7 +81,7 @@ async function getProducts(){
       document.getElementById("productsPrice").append(result[i]["price"] + " ")
       document.getElementById("productsWeight").append(result[i]["weight"] + " ")
     }
-    
+    return result;
     
   }
   catch(error){
@@ -107,6 +107,7 @@ x.addEventListener("input", function(e){
   }
 
   console.log(e.target.value)
+  console.log(getProducts(),"hallo")
   
 })
 
