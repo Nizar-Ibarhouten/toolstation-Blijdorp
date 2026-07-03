@@ -38,7 +38,7 @@
   <button id="button3">submit </button> 
 </form>
 
-<button onclick="getProducts()">click</button>
+<!-- <button onclick="getProducts()">click</button> -->
 
 
 <ul >    
@@ -66,34 +66,39 @@ function clickme(){
   document.getElementById("button2").appendChild(button2)  
 }
 
-async function getProducts(){
-  const url = "http://127.0.0.1:8000/products";
+// async function getProducts(){
+//   const url = "http://127.0.0.1:8000/products";
 
-  try {
-    var response = await fetch(url);
-    if (!response.ok){
-      throw new Error(`Response status:${response.status}`);
-    }
-    var result = await response.json();
-    console.log(result);
-    for (i=0;i<3;i++){
-      document.getElementById("productsName").append(result[i]["name"] + " ")
-      document.getElementById("productsPrice").append(result[i]["price"] + " ")
-      document.getElementById("productsWeight").append(result[i]["weight"] + " ")
-    }
-    return result;
+//   try {
+//     var response = await fetch(url);
+//     if (!response.ok){
+//       throw new Error(`Response status:${response.status}`);
+//     }
+//     var result = await response.json();
+//     console.log(result);
+//     for (i=0;i<3;i++){
+//       document.getElementById("productsName").append(result[i]["name"] + " ")
+//       document.getElementById("productsPrice").append(result[i]["price"] + " ")
+//       document.getElementById("productsWeight").append(result[i]["weight"] + " ")
+//     }
+//     return result;
     
-  }
-  catch(error){
-    console.error(error.message)
-  }
-}
-
+//   }
+//   catch(error){
+//     console.error(error.message)
+//   }
+// }
 
 const x = document.getElementById("input3");
 
 
-x.addEventListener("input", function(e){
+fetch("http://127.0.0.1:8000/products")
+.then(function(response){
+  
+  return response.json();
+})
+.then(function(json){
+ x.addEventListener("input", function(e){
 
   inpValue = document.getElementById("inputValue")
   
@@ -105,11 +110,22 @@ x.addEventListener("input", function(e){
   if (e.target.value != ""){
     inpValue.classList.add("div23")
   }
+  if (e.target.value == json[0]["name"]){
+    console.log(true)
+    const p = document.createElement("h3")
+    p.innerText = json[0]["name"]
+    document.body.appendChild(p)
 
+  }
   console.log(e.target.value)
-  console.log(getProducts()[['PromiseResult']],"hallo")
+  console.log(json,"hallo")
   
 })
+})
+.catch(function(e){
+  console.log(e)
+})
+
 
 
 
