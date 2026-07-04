@@ -112,27 +112,14 @@ fetch("http://127.0.0.1:8000/products")
   }
 
   for (i=0;i<json.length;i++){
-    if (e.target.value == json[i]["name"]){
+    if (e.target.value == json[i]["name"] || e.target.value == json[i]["weight"] || e.target.value == json[i]["price"]|| e.target.value == json[i]["quantity"]){
     console.log(true)
     const p = document.createElement("h3")
     p.innerText = json[i]["name"]
     document.body.appendChild(p)
 
   }
-  if (e.target.value == json[i]["price"]){
-    console.log(true)
-    const p = document.createElement("h3")
-    p.innerText = json[i]["name"]
-    document.body.appendChild(p)
-
-  }
-  if (e.target.value == json[i]["weight"]){
-    console.log(true)
-    const p = document.createElement("h3")
-    p.innerText = json[i]["name"]
-    document.body.appendChild(p)
-
-  }
+  
 }
   console.log(e.target.value)
   console.log(json,"hallo")
