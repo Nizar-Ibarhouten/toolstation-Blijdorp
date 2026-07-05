@@ -110,14 +110,17 @@ fetch("http://127.0.0.1:8000/products")
   if (e.target.value != ""){
     inpValue.classList.add("div23")
   }
-
+const p = document.createElement("h3")
   for (i=0;i<json.length;i++){
     if (e.target.value == json[i]["name"] || e.target.value == json[i]["weight"] || e.target.value == json[i]["price"]|| e.target.value == json[i]["quantity"]){
     console.log(true)
-    const p = document.createElement("h3")
+    
     p.innerText = json[i]["name"]
     document.body.appendChild(p)
-
+  
+  }
+   if (e.target.value == ""){
+        document.body.remove(p)
   }
   
 }
