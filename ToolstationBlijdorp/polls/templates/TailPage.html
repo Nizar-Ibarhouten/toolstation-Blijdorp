@@ -49,6 +49,7 @@
 
 <p  id="inputValue"></p>
 
+<p id="artikel"></p>
 <script lang="Javascript" >
 
 function clickme(){
@@ -110,19 +111,22 @@ fetch("http://127.0.0.1:8000/products")
   if (e.target.value != ""){
     inpValue.classList.add("div23")
   }
+
+const artikel = document.getElementById("artikel")
 const p = document.createElement("h3")
   for (i=0;i<json.length;i++){
     if (e.target.value == json[i]["name"] || e.target.value == json[i]["weight"] || e.target.value == json[i]["price"]|| e.target.value == json[i]["quantity"]){
     console.log(true)
     
     p.innerText = json[i]["name"]
-    document.body.appendChild(p)
-  
+    artikel.appendChild(p)
+    
   }
    if (e.target.value == ""){
-        document.body.remove(p)
+    artikel.innerHTML = ""
+    console.log("the one piece is real")
   }
-  
+
 }
   console.log(e.target.value)
   console.log(json,"hallo")
