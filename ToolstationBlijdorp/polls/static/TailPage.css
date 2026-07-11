@@ -68,11 +68,10 @@ body {
 
 
 .divnogwat {
-  height: 50px;
-  width: 200px;
+  height: 100px;
+  width: 300px;
   position: relative;
-  background-color: #6b1c1c;
-  overflow: auto;
-  border: 1px solid #642222;
+  background-color: #263ef6;
+  border: 1px solid #3fe129;
   
 }
