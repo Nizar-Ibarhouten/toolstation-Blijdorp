@@ -32,9 +32,10 @@
   <br>
   
   <br>
-<form action="/storeProduct">
+<form action="/storeProduct" method="post">
+  {% csrf_token %}
   <label for="name">Enter product</label> 
-  <input id="input3" type="text" value="">
+  <input name="input3" id="input3" type="text" value="">
   <button id="button3">submit </button> 
 </form>
 

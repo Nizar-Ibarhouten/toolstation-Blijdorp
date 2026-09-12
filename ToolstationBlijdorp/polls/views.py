@@ -97,9 +97,11 @@ def return_products(request):
     return HttpResponse(json.dumps(data),content_type="application/json")
 
 def store_product(request):
-    hardwareProducts(hardware_products = "milwakee").save()
-    print(hardwareProducts.objects.all())
-    
+    if request.method == "POST":
+        product = request.POST.get("input3")
+        hardwareProducts(hardware_products = product).save()
+
+
     return render(request, "TailPage.html")
 
 
