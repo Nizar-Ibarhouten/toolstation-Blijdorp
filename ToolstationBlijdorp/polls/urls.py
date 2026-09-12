@@ -17,5 +17,6 @@ urlpatterns = [
   path("return_json",views.return_json,name="nana"),
   path("Home",views.Tail_Page,name="mido"),
   path("products",views.return_products,name="mid2"),
+  path("storeProduct", views.store_product,name="storeProduct")
   
 ]

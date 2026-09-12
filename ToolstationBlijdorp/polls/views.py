@@ -96,6 +96,10 @@ def return_products(request):
         "quantity": "100"}]
     return HttpResponse(json.dumps(data),content_type="application/json")
 
+def store_product(request):
+    
+    return render(request, "TailPage.html")
+
 
 class NamesCreate(generics.ListCreateAPIView):
     queryset = Names.objects.all()
