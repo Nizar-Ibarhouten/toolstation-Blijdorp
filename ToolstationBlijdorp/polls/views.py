@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import register
 
-from .models import Names
+from .models import Names, hardwareProducts
 
 from django.views.decorators.csrf import csrf_protect
 from rest_framework.response import Response
@@ -97,6 +97,8 @@ def return_products(request):
     return HttpResponse(json.dumps(data),content_type="application/json")
 
 def store_product(request):
+    hardwareProducts(hardware_products = "milwakee").save()
+    print(hardwareProducts.objects.all())
     
     return render(request, "TailPage.html")
 
