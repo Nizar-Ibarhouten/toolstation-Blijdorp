@@ -75,33 +75,15 @@ def return_json(request):
     
 
 def return_products(request):
-    data = [
-    {"name" : "bahco hamer",
-        "price": "20.99",
-        "weight": "250gr",
-        "quantity": "5"
-    },
-    {"name" : "milwakee boor machine",
-        "price": "199.00",
-        "weight": "3 kg",
-        "quantity": "3"
-    },{"name" : "knipex waterpomptang",
-        "price": "30.99",
-        "weight": "300gr",
-        "quantity": "10"
-
-    },{"name" : "wiha bit",
-        "price": "3.05",
-        "weight": "10gr",
-        "quantity": "100"}]
+    data = hardwareProducts.objects.all()
+    print(json.dumps(str(data)))
     return HttpResponse(json.dumps(data),content_type="application/json")
 
 def store_product(request):
     if request.method == "POST":
         product = request.POST.get("input3")
         hardwareProducts(hardware_products = product).save()
-
-
+    
     return render(request, "TailPage.html")
 
 
