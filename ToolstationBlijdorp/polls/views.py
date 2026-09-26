@@ -76,8 +76,15 @@ def return_json(request):
 
 def return_products(request):
     data = hardwareProducts.objects.all()
-    print(json.dumps(str(data)))
-    return HttpResponse(json.dumps(data),content_type="application/json")
+    
+    hardwareproducts = list(data)
+    new_list = []
+    for i in hardwareproducts:
+        new_list.append(i.hardware_products)
+        
+    
+    
+    return HttpResponse(json.dumps(new_list),content_type="application/json")
 
 def store_product(request):
     if request.method == "POST":
