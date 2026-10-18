@@ -93,18 +93,15 @@ fetch("http://127.0.0.1:8000/products")
   }
 
 const artikel = document.getElementById("artikel")
-const p = document.createElement("h3")
+
   for (i=0;i<json.length;i++){
-    if (e.target.value == json[i]["name"].charAt(0) ||
-     e.target.value == json[i]["name"].charAt(1) ||
-      e.target.value == json[i]["name"].charAt(2)||
-       e.target.value == json[i]["name"].charAt(3)){
-    console.log(true)
-    
-    p.innerText = [json[i]["name"]
-    ,json[i]["price"], 
-    json[i]["weight"] ,
-    json[i]["quantity"]]
+    if (e.target.value == json[i].charAt(0) ||
+     e.target.value == json[i].charAt(1) ||
+      e.target.value == json[i].charAt(2)||
+       e.target.value == json[i].charAt(3)){
+    console.log(json[i])
+    var p = document.createElement("h3")
+    p.innerText = [json[i]]
     
     
     artikel.appendChild(p)
@@ -117,9 +114,7 @@ const p = document.createElement("h3")
     artikel.classList.remove("divnogwat")
   }
 
-}
-  console.log(e.target.value)
-  
+}  
   
 })
 })
