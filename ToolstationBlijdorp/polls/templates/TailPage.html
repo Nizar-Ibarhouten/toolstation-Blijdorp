@@ -80,7 +80,7 @@ fetch("http://127.0.0.1:8000/products")
 })
 .then(function(json){
  x.addEventListener("input", function(e){
-  console.log(json)
+  
   inpValue = document.getElementById("inputValue")
   
   inpValue.innerText = `${e.target.value}`
@@ -102,10 +102,12 @@ const artikel = document.getElementById("artikel")
     console.log(json[i])
     var p = document.createElement("h3")
     p.innerText = [json[i]]
-    
+    p.style.backgroundColor = 'rgb(255, 225, 115)';
+    p.style.blockSize  = '50px'
+    p.style.border = '2px solid red'
     
     artikel.appendChild(p)
-    artikel.classList.add("divnogwat")
+    // artikel.classList.add("divnogwat")
     artikel.classList.add("button2")
     
   }
