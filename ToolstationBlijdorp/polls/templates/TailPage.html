@@ -39,7 +39,6 @@
   <button id="button3">submit </button> 
 </form>
 
-<img src="/Users/Nizar/OneDrive - Hogeschool Rotterdam/Afbeeldingen/Schermopnamen/milwakee_img.png" alt="">
 
 <!-- <button onclick="getProducts()">click</button> -->
 <ul >    
@@ -103,13 +102,15 @@ const artikel = document.getElementById("artikel")
     var p = document.createElement("h3")
     p.innerText = [json[i]]
     p.style.backgroundColor = 'rgb(255, 255, 0)';
-    p.style.blockSize  = '100px'
+    p.style.blockSize  = '200px'
     p.style.border = '2px solid red'
     
     var img = document.createElement("img");
     img.src = "static/images/milwakee_img.png";
+    img.sizes = "auto"
+    p.appendChild(img)
     artikel.appendChild(p)
-    artikel.appendChild(img)
+    
     // artikel.classList.add("divnogwat")
     artikel.classList.add("button2")
     
