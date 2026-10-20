@@ -50,7 +50,36 @@
 <p  id="inputValue"></p>
 
 <p id="artikel"></p>
+
+<p id="count" style="font-size:40px;">0</p>
+
+<button onclick="increaseCount()">+</button>
+<button onclick="decreaseCount()">-</button>
+<button onclick="resetCount()">Reset</button>
+<button onclick="saveCount()">Save</button>
+<button onclick="loadCount()">Load</button>
+
 <script lang="Javascript" >
+
+let count = 0;
+  function updateCount() {
+  document.getElementById("count").innerHTML = count;
+  }
+
+  function increaseCount(){
+    count++;
+    updateCount();
+  }
+
+  function decreaseCount() {
+  count--;
+  updateCount();
+}
+function saveCount() {
+  localStorage.setItem("count", count);
+}
+
+
 
 function clickme(){
   const newDiv2 = document.createElement("div")
@@ -101,7 +130,7 @@ const artikel = document.getElementById("artikel")
     console.log(json[i])
     var p = document.createElement("h3")
     p.innerText = [json[i]]
-    p.style.backgroundColor = 'rgb(255, 255, 0)';
+    p.style.backgroundColor = 'rgb(245, 243, 218)';
     p.style.blockSize  = '200px'
     p.style.border = '2px solid red'
     
@@ -119,7 +148,7 @@ const artikel = document.getElementById("artikel")
     artikel.innerHTML = ""
     artikel.classList.remove("divnogwat")
   }
-
+  
 }  
   
 })
