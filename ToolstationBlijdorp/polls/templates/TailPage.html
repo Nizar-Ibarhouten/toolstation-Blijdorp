@@ -51,33 +51,13 @@
 
 <p id="artikel"></p>
 
-<p id="count" style="font-size:40px;">0</p>
+<!-- <p id="count" style="font-size:40px;">0</p> -->
 
-<button onclick="increaseCount()">+</button>
-<button onclick="decreaseCount()">-</button>
-<button onclick="resetCount()">Reset</button>
-<button onclick="saveCount()">Save</button>
-<button onclick="loadCount()">Load</button>
 
-<script lang="Javascript" >
 
-let count = 0;
-  function updateCount() {
-  document.getElementById("count").innerHTML = count;
-  }
+<script lang="Javascript">
 
-  function increaseCount(){
-    count++;
-    updateCount();
-  }
 
-  function decreaseCount() {
-  count--;
-  updateCount();
-}
-function saveCount() {
-  localStorage.setItem("count", count);
-}
 
 
 
@@ -137,8 +117,66 @@ const artikel = document.getElementById("artikel")
     var img = document.createElement("img");
     img.src = "static/images/milwakee_img.png";
     img.sizes = "auto"
+
+
+    var buttonPlus = document.createElement("button")
+    var buttonMinus = document.createElement("button")
+
+    buttonPlus.innerText = "+"
+    buttonMinus.innerText = "-"
+
+
+    let count = 0;
+    var par = document.createElement("p")
+    par.append(count)
+
+    // function updateCount() {
+    //   par.append(count)
+    // }
+
+    function increaseCount(){
+    count++;
+
+    // updateCount();
+    }
+
+    function decreaseCount() {
+    count--;
+    // updateCount();
+}
+   
+
+    buttonPlus.addEventListener("click",function(e){
+      console.log(e)
+      increaseCount();
+      // saveCount()
+      par.append(count)
+      console.log(count);
+
+    })
+    buttonMinus.addEventListener("click",
+    function (e) {
+      console.log(e)
+      
+      decreaseCount();
+      par.append(count)
+      // saveCount()
+      console.log(count)
+    })
+
+
+
     p.appendChild(img)
+    p.appendChild(buttonPlus)
+    p.appendChild(buttonMinus)
+    p.appendChild(par)
+
     artikel.appendChild(p)
+    // artikel.appendChild(par)
+    
+
+
+
     
     // artikel.classList.add("divnogwat")
     artikel.classList.add("button2")
