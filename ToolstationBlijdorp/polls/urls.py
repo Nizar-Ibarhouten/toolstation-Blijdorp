@@ -9,13 +9,13 @@ from .views import Names, NamesCreate
 
 
 urlpatterns = [
-  path("",views.index2,name="index2"),
+  path("index2",views.index2,name="index2"),
   path("login2",views.index3,name="index3"),
   path("name",views.get_name,name="name"),
   path("updateName",views.update_name,name="updateName"),
   path('api1/', NamesCreate.as_view(), name='api1'),
   path("return_json",views.return_json,name="nana"),
-  path("Home",views.Tail_Page,name="mido"),
+  path("",views.Tail_Page,name="Home"),
   path("products",views.return_products,name="mid2"),
   path("storeProduct", views.store_product,name="storeProduct")
   

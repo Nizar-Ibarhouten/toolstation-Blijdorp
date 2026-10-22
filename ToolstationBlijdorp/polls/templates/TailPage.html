@@ -118,7 +118,7 @@ const artikel = document.getElementById("artikel")
     img.src = "static/images/milwakee_img.png";
     img.sizes = "auto"
 
-
+    var countDisplay = document.createElement("p")
     var buttonPlus = document.createElement("button")
     var buttonMinus = document.createElement("button")
 
@@ -127,41 +127,31 @@ const artikel = document.getElementById("artikel")
 
 
     let count = 0;
-    var par = document.createElement("p")
-    par.append(count)
-
-    // function updateCount() {
-    //   par.append(count)
-    // }
-
     function increaseCount(){
     count++;
-
-    // updateCount();
     }
-
     function decreaseCount() {
     count--;
-    // updateCount();
-}
-   
-
+    }
+  
     buttonPlus.addEventListener("click",function(e){
       console.log(e)
       increaseCount();
-      // saveCount()
-      par.append(count)
-      console.log(count);
+      
+      countDisplay.innerText = count
+     
+     console.log(count)
 
     })
+    
     buttonMinus.addEventListener("click",
-    function (e) {
-      console.log(e)
+      function (e) {
+        console.log(e)
+       
+      countDisplay.innerText = count
+        decreaseCount();
+    
       
-      decreaseCount();
-      par.append(count)
-      // saveCount()
-      console.log(count)
     })
 
 
@@ -169,7 +159,7 @@ const artikel = document.getElementById("artikel")
     p.appendChild(img)
     p.appendChild(buttonPlus)
     p.appendChild(buttonMinus)
-    p.appendChild(par)
+    p.appendChild(countDisplay)
 
     artikel.appendChild(p)
     // artikel.appendChild(par)
