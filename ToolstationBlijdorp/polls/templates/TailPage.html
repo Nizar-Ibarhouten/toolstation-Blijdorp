@@ -115,60 +115,62 @@ const artikel = document.getElementById("artikel")
     p.style.border = '2px solid red'
     
     var img = document.createElement("img");
-    img.src = "static/images/milwakee_img.png";
-    img.sizes = "auto"
-
     var countDisplay = document.createElement("p")
     var buttonPlus = document.createElement("button")
     var buttonMinus = document.createElement("button")
+    var someWord = document.createElement("h1")
+    someWord.innerText = "hello there people"
 
+    var allHeads = document.querySelectorAll('h1');
+    var allParagraphs = document.querySelectorAll('p')
+
+    // allHeads.forEach(function(h1){
+    //   h1.addEventListener("click",
+    //         function() {
+    //           h1.innerText = "zehahaha"
+    //           console.log("zehahah")
+    //         }
+    //       )
+    // })
+   
+
+
+    img.src = "static/images/milwakee_img.png";
+    img.sizes = "auto"
     buttonPlus.innerText = "+"
     buttonMinus.innerText = "-"
 
 
     let count = 0;
+    countDisplay.innerText = count
     function increaseCount(){
     count++;
     }
     function decreaseCount() {
     count--;
     }
-  
-    buttonPlus.addEventListener("click",function(e){
-      console.log(e)
-      increaseCount();
-      
+  allHeads.forEach( function(countDisplay){
+    buttonPlus.addEventListener("click",
+    function (){
+      count++
       countDisplay.innerText = count
-     
-     console.log(count)
-
-    })
+    })}
+  )
+    
     
     buttonMinus.addEventListener("click",
-      function (e) {
-        console.log(e)
-       
+    function () {
+      decreaseCount();
       countDisplay.innerText = count
-        decreaseCount();
-    
-      
     })
-
 
 
     p.appendChild(img)
     p.appendChild(buttonPlus)
     p.appendChild(buttonMinus)
     p.appendChild(countDisplay)
-
+    artikel.appendChild(someWord)
     artikel.appendChild(p)
-    // artikel.appendChild(par)
-    
-
-
-
-    
-    // artikel.classList.add("divnogwat")
     artikel.classList.add("button2")
     
   }
