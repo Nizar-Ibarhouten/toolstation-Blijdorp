@@ -111,9 +111,12 @@ const artikel = document.getElementById("artikel")
     p.style.backgroundColor = 'rgb(245, 243, 218)';
     p.style.blockSize  = '200px'
     p.style.border = '2px solid red'
+    p.style.marginRight = '200px'
     
     var img = document.createElement("img");
     let countDisplay = document.createElement("p")
+    countDisplay.style.marginLeft = '1000px'
+    countDisplay.style.marginTop = "10px"
     let buttonPlus = document.createElement("button")
     let buttonMinus = document.createElement("button")
     
@@ -137,7 +140,6 @@ const artikel = document.getElementById("artikel")
     function (){
       count++
       countDisplay.innerText = count}
-
   )
     
     
@@ -147,7 +149,7 @@ const artikel = document.getElementById("artikel")
       countDisplay.innerText = count
     })
 
-
+    
     p.appendChild(img)
     p.appendChild(buttonPlus)
     p.appendChild(buttonMinus)
