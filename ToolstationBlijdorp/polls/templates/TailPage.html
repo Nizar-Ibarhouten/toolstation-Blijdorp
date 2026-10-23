@@ -51,15 +51,13 @@
 
 <p id="artikel"></p>
 
+<p id="test"></p>
+
 <!-- <p id="count" style="font-size:40px;">0</p> -->
 
 
 
 <script lang="Javascript">
-
-
-
-
 
 function clickme(){
   const newDiv2 = document.createElement("div")
@@ -115,25 +113,10 @@ const artikel = document.getElementById("artikel")
     p.style.border = '2px solid red'
     
     var img = document.createElement("img");
-    var countDisplay = document.createElement("p")
-    var buttonPlus = document.createElement("button")
-    var buttonMinus = document.createElement("button")
-    var someWord = document.createElement("h1")
-    someWord.innerText = "hello there people"
-
-    var allHeads = document.querySelectorAll('h1');
-    var allParagraphs = document.querySelectorAll('p')
-
-    // allHeads.forEach(function(h1){
-    //   h1.addEventListener("click",
-    //         function() {
-    //           h1.innerText = "zehahaha"
-    //           console.log("zehahah")
-    //         }
-    //       )
-    // })
-   
-
+    let countDisplay = document.createElement("p")
+    let buttonPlus = document.createElement("button")
+    let buttonMinus = document.createElement("button")
+    
 
     img.src = "static/images/milwakee_img.png";
     img.sizes = "auto"
@@ -149,12 +132,12 @@ const artikel = document.getElementById("artikel")
     function decreaseCount() {
     count--;
     }
-  allHeads.forEach( function(countDisplay){
+ 
     buttonPlus.addEventListener("click",
     function (){
       count++
-      countDisplay.innerText = count
-    })}
+      countDisplay.innerText = count}
+
   )
     
     
@@ -169,9 +152,9 @@ const artikel = document.getElementById("artikel")
     p.appendChild(buttonPlus)
     p.appendChild(buttonMinus)
     p.appendChild(countDisplay)
-    artikel.appendChild(someWord)
     artikel.appendChild(p)
     artikel.classList.add("button2")
+    
     
   }
    if (e.target.value == ""){
@@ -186,6 +169,7 @@ const artikel = document.getElementById("artikel")
 .catch(function(e){
   console.log(e)
 })
+
 
 
 
