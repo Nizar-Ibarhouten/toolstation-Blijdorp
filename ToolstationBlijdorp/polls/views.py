@@ -81,9 +81,6 @@ def return_products(request):
     new_list = []
     for i in hardwareproducts:
         new_list.append(i.hardware_products)
-        
-    
-    
     return HttpResponse(json.dumps(new_list),content_type="application/json")
 
 def store_product(request):
