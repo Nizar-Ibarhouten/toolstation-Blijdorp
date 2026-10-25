@@ -1,14 +1,15 @@
 h1 {
   display: inline; /* the default for span */
   padding: 10px;
-  border: 20px solid rgb(247, 51, 45);  
-  background-color: rgb(204, 244, 27);
+  border: 20px solid rgb(247, 51, 45); 
+  border-image: linear-gradient(to right, #3acfd5 0%, #ec3023 100%) 1; 
+  background-color: yellow;
   color: rgb(20, 18, 27);
   border-radius: 120px;
   position: absolute;
   left: 450px;
   right: 600px;
-  font-family: 'Fantasy';
+  font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   top : 30px
 }
 
@@ -48,7 +49,7 @@ h1 {
   border-style: solid;
   border-width: 10px;
   border-color: red;
-  border-radius: 40px;
+  border-image: linear-gradient(to right, #3acfd5 0%, #ec3023 100%) 1; 
   padding-right: 300px;
   padding-left: 200px;
   padding-top: 10px;
