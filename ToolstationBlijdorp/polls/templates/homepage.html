@@ -7,7 +7,7 @@
 
   <style>
     body {
-      background-color: rgb(209, 210, 207)
+      background-color: rgb(6, 173, 251)
     }
   </style>
   <link rel="stylesheet" href="static/home.css" />
@@ -16,15 +16,21 @@
 <body>
 
   <h1>Toolstation Blijdorp</h1>
-  <p style="color: yellow;">hier zie je alles over toolstation blijdorp</p>
-  <div>
-    <p>sla hier een nieuwe product op</p>
 
     <div class="PostbarSection">
       <form action="/storeProduct" method="post">
         {% csrf_token %}
-        <label class="label" for="name">Enter product</label>
+        <label class="label" for="name">Naam product</label>
         <input name="input3" id="input3" type="text" value="">
+        <br>
+         <label class="label" for="name">Prijs inclusief btw</label>
+        <input  type="text" value="">
+        <br>
+         <label class="label" for="name">gewicht</label>
+        <input  type="text" value="">
+        br
+         <label class="label" for="name">hoeveelheid</label>
+        <input type="text" value="">
         <button id="button3">submit </button>
       </form>
     </div>
