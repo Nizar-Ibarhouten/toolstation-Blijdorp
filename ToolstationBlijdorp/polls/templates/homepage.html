@@ -1,32 +1,43 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
 
   <style>
-    body  {background-color: rgb(209, 210, 207)}
+    body {
+      background-color: rgb(209, 210, 207)
+    }
   </style>
-  <link rel="stylesheet"  href="static/home.css"/>
+  <link rel="stylesheet" href="static/home.css" />
 </head>
-<body >
+
+<body>
 
   <h1>Toolstation Blijdorp</h1>
   <p style="color: yellow;">hier zie je alles over toolstation blijdorp</p>
-  <div >
-    <p>zoek wat je wil</p>
-    <form action="" title="zoek">
-      <input type="text">
-    </form>
+  <div>
+    <p>sla hier een nieuwe product op</p>
+
+    <div class="PostbarSection">
+      <form action="/storeProduct" method="post">
+        {% csrf_token %}
+        <label class="label" for="name">Enter product</label>
+        <input name="input3" id="input3" type="text" value="">
+        <button id="button3">submit </button>
+      </form>
+    </div>
   </div>
-<br>
-  <div class="div1">
+  <br>
+  <!-- <div class="div1">
 
   </div>
   
   <div class="div2">
  <a href="/login2">login</a>
-  </div>
- 
+  </div> -->
+
 </body>
+
 </html>

@@ -87,8 +87,7 @@ def store_product(request):
     if request.method == "POST":
         product = request.POST.get("input3")
         hardwareProducts(hardware_products = product).save()
-    
-    return render(request, "TailPage.html")
+    return render(request, "homepage.html")
 
 
 class NamesCreate(generics.ListCreateAPIView):
