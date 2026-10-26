@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import register
 
-from .models import Names, hardwareProducts
+from .models import Names, hardwareproducts
 
 from django.views.decorators.csrf import csrf_protect
 from rest_framework.response import Response
@@ -75,18 +75,21 @@ def return_json(request):
     
 
 def return_products(request):
-    data = hardwareProducts.objects.all()
+    data = hardwareproducts.objects.all()
     
-    hardwareproducts = list(data)
+    hardwareproducts_list = list(data)
     new_list = []
-    for i in hardwareproducts:
+    for i in hardwareproducts_list:
         new_list.append(i.hardware_products)
     return HttpResponse(json.dumps(new_list),content_type="application/json")
 
 def store_product(request):
+    column_names = [field.column for field in hardwareproducts._meta.fields]
+    print(column_names)
+   
     if request.method == "POST":
         product = request.POST.get("input3")
-        hardwareProducts(hardware_products = product).save()
+        hardwareproducts(hardware_products = product).save()
     return render(request, "homepage.html")
 
 

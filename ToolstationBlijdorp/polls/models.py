@@ -10,10 +10,13 @@ class Names(models.Model):
     return f"{self.User_names}"
     
     
-class hardwareProducts(models.Model):
+class hardwareproducts(models.Model):
 
-  hardware_products = models.CharField(max_length=100)
+  Namen = models.CharField(max_length=100)
+  Gewicht  = models.CharField(max_length=100)
+  Prijs_inc_btw = models.CharField(max_length=100)
+  kwantiteit = models.CharField(max_length=100)
 
   def __repr__(self):
-    return f"{self.hardware_products}"
+    return f"{self.Namen,self.Gewicht,self.Prijs_inc_btw,self.kwantiteit}"
     

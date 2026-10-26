@@ -3,7 +3,7 @@ h1 {
   padding: 10px;
   border: 20px solid rgb(247, 51, 45); 
   border-image: linear-gradient(to right, #3acfd5 0%, #ec3023 100%) 1; 
-  background-color: yellow;
+  background-color: rgb(233, 241, 233);
   color: rgb(20, 18, 27);
   border-radius: 120px;
   position: absolute;
@@ -40,7 +40,7 @@ h1 {
 
 
 .PostbarSection{
-  background-color: yellow;
+  background-color: rgb(233, 241, 233);
   margin-left: 400px;
   margin-right: 400px;
   margin-top: 200px;
