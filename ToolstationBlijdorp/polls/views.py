@@ -88,9 +88,26 @@ def store_product(request):
     print(column_names)
    
     if request.method == "POST":
-        product = request.POST.get("input3")
-        hardwareproducts(hardware_products = product).save()
+        product = request.POST.get("Naam")
+        hardwareproducts(Naam= product).save()
+
+    if request.method == "POST":
+        product = request.POST.get("Gewicht")
+        hardwareproducts(Gewicht = product).save()
+
+    if request.method == "POST":
+        product = request.POST.get("Prijs_inc_btw")
+        hardwareproducts(Prijs_inc_btw = product).save()\
+
+    if request.method == "POST":
+        product = request.POST.get("Kwantiteit")
+        hardwareproducts(Kwantiteit = product).save()
+
+    if request.method == "POST":
+        product = request.POST.get("Beschrijving")
+        hardwareproducts(Beschrijving = product).save()
     return render(request, "homepage.html")
+    
 
 
 class NamesCreate(generics.ListCreateAPIView):

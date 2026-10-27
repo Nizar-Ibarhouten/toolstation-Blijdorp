@@ -21,16 +21,20 @@
       <form action="/storeProduct" method="post">
         {% csrf_token %}
         <label class="label" for="name">Naam product</label>
-        <input name="input3" id="input3" type="text" value="">
+        <input name="Naam" id="input3" type="text" value="">
         <br>
          <label class="label" for="name">Prijs inclusief btw</label>
-        <input  type="text" value="">
+        <input  name="Gewicht" type="text" value="">
         <br>
          <label class="label" for="name">gewicht</label>
-        <input  type="text" value="">
+        <input name="Prijs_inc_btw" type="text" value="">
         <br>
          <label class="label" for="name">hoeveelheid</label>
-        <input type="text" value="">
+        <input name="Kwantiteit" type="text" value="">
+        <br>
+        <label class="label" for="name">Beschrijving</label>
+        <input name= "Beschrijving" type="text" value="">
+
         <button id="button3">submit </button>
       </form>
     </div>
