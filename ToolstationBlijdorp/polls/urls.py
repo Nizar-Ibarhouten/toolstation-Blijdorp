@@ -18,5 +18,4 @@ urlpatterns = [
   path("",views.Tail_Page,name="Home"),
   path("products",views.return_products,name="mid2"),
   path("storeProduct", views.store_product,name="storeProduct")
-  
 ]
