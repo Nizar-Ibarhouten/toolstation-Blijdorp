@@ -78,9 +78,11 @@ def return_products(request):
     data = hardwareproducts.objects.all()
     
     hardwareproducts_list = list(data)
+    
     new_list = []
     for i in hardwareproducts_list:
-        new_list.append(i.hardware_products)
+        new_list.append(i.Naam)
+        
     return HttpResponse(json.dumps(new_list),content_type="application/json")
 
 def store_product(request):
@@ -88,24 +90,13 @@ def store_product(request):
     print(column_names)
    
     if request.method == "POST":
-        product = request.POST.get("Naam")
-        hardwareproducts(Naam= product).save()
+        naam = request.POST.get("Naam")
+        gewicht = request.POST.get("Gewicht")
+        prijs_inc_btw = request.POST.get("Prijs_inc_btw")
+        kwantiteit = request.POST.get("Kwantiteit")
+        beschrijving = request.POST.get("Beschrijving")
 
-    if request.method == "POST":
-        product = request.POST.get("Gewicht")
-        hardwareproducts(Gewicht = product).save()
-
-    if request.method == "POST":
-        product = request.POST.get("Prijs_inc_btw")
-        hardwareproducts(Prijs_inc_btw = product).save()\
-
-    if request.method == "POST":
-        product = request.POST.get("Kwantiteit")
-        hardwareproducts(Kwantiteit = product).save()
-
-    if request.method == "POST":
-        product = request.POST.get("Beschrijving")
-        hardwareproducts(Beschrijving = product).save()
+        hardwareproducts(Naam=naam,Gewicht=gewicht,Prijs_inc_btw=prijs_inc_btw,Kwantiteit=kwantiteit,Beschrijving=beschrijving).save()
     return render(request, "homepage.html")
     
 

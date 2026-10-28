@@ -86,6 +86,8 @@ fetch("http://127.0.0.1:8000/products")
 })
 .then(function(json){
  x.addEventListener("input", function(e){
+
+  console.log(json)
   
   inpValue = document.getElementById("inputValue")
   
