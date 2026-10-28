@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 # Create your views here.
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import register
 
-from .models import Names, hardwareproducts
+from .models import Names, hardwareproducts,hardwareImages
+from .forms import UploadImageForm
 
 from django.views.decorators.csrf import csrf_protect
 from rest_framework.response import Response
@@ -107,6 +108,22 @@ class NamesCreate(generics.ListCreateAPIView):
     serializer_class = NameSerializer
 
 
-def Tail_Page(request):
+def upload_file(request):
+    if request.method == 'POST':
+        form = UploadImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            uploaded_img = form.save(commit=False)
+            uploaded_img.image_data = form.cleaned_data['GereedschapImage'].file.read()
+            uploaded_img.save()
+            return redirect('/')
+        else:
+            form = UploadImageForm()
+        return render(request, 'images.html', {'form': form})
+    return render(request, 'images.html')
     
-    return render(request, "TailPage.html")
+
+
+def Tail_Page(request):
+    Tool_images = hardwareImages.objects.all()[0].GereedschapImage
+
+    return render(request, "TailPage.html",{'toolimages' : Tool_images})

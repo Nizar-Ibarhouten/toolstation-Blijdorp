@@ -19,18 +19,6 @@
       <i class="fa-solid fa-circle-exclamation  fa-2x"></i>
     </div>
   </div>
-
-  <br>
-
-  <div  id="div23" class="div23">
-      
-    <div class="div25">
-
-    </div>
-    <button id="button2" onclick="clickme()" class="button">add</button>
-  </div>
-  <br>
-  
   <br>
 <form >
   {% csrf_token %}
@@ -55,24 +43,10 @@
 
 <!-- <p id="count" style="font-size:40px;">0</p> -->
 
-
-
+<img src="static/images/{{toolimages}}" alt=""  width="120" height="90">
 <script lang="Javascript">
 
-function clickme(){
-  const newDiv2 = document.createElement("div")
-  newDiv2.classList.add("div23")
-  document.getElementById("div23").appendChild(newDiv2)
 
-  const addDiv = document.createElement("div")
-  addDiv.classList.add("div25")
-  document.getElementById("div23").appendChild(addDiv)
-
-  const button2 = document.createElement("button")
-  button2.classList.add("button")
-  button2.innerText = "add"
-  document.getElementById("button2").appendChild(button2)  
-}
 
 
 
