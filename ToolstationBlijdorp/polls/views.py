@@ -82,7 +82,7 @@ def return_products(request):
     for i in hardware_list:
         new_list.append([i.Naam,i.Prijs_inc_btw,i.Gewicht,i.Kwantiteit,i.Beschrijving])
         
-        
+    
         
     return HttpResponse(json.dumps(new_list),content_type="application/json")
 

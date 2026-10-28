@@ -86,8 +86,6 @@ fetch("http://127.0.0.1:8000/products")
 })
 .then(function(json){
  x.addEventListener("input", function(e){
-
-  console.log(json)
   
   inpValue = document.getElementById("inputValue")
   
@@ -103,10 +101,10 @@ fetch("http://127.0.0.1:8000/products")
 const artikel = document.getElementById("artikel")
 
   for (i=0;i<json.length;i++){
-    if (e.target.value == json[i].charAt(0) ||
-     e.target.value == json[i].charAt(1) ||
-      e.target.value == json[i].charAt(2)||
-       e.target.value == json[i].charAt(3)){
+    if (e.target.value == json[i][0].charAt(0) ||
+     e.target.value == json[i][0].charAt(1) ||
+      e.target.value == json[i][0].charAt(2)||
+       e.target.value == json[i][0].charAt(3)){
     console.log(json[i])
     var p = document.createElement("h3")
     p.innerText = [json[i]]
