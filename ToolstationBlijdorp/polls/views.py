@@ -118,8 +118,8 @@ def upload_file(request):
             return redirect('/')
         else:
             form = UploadImageForm()
-        return render(request, 'images.html', {'form': form})
-    return render(request, 'images.html')
+        return render(request, 'homepage.html', {'form': form})
+    return render(request, 'homepage.html')
     
 
 
