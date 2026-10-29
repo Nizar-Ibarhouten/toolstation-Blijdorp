@@ -99,8 +99,13 @@ def store_product(request):
         beschrijving = request.POST.get("Beschrijving")
 
         hardwareproducts(Naam=naam,Gewicht=gewicht,Prijs_inc_btw=prijs_inc_btw,Kwantiteit=kwantiteit,Beschrijving=beschrijving).save()
-    return render(request, "homepage.html")
-    
+        product = hardwareproducts.objects.all().values_list('id',flat=True)
+        id_list = []
+        for product.id in product:
+            id_list.append(product.id)
+            print(product.id)
+    return render(request, "homepage.html",{'id_list':id_list})
+
 
 
 class NamesCreate(generics.ListCreateAPIView):
