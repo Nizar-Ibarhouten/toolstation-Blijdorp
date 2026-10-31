@@ -104,7 +104,8 @@ def store_product(request):
         for product.id in product:
             id_list.append(product.id)
             print(product.id)
-    return render(request, "homepage.html",{'id_list':id_list})
+            
+    return render(request, "homepage.html",{'id_list':product.id})
 
 
 
@@ -116,7 +117,11 @@ class NamesCreate(generics.ListCreateAPIView):
 def upload_file(request):
     if request.method == 'POST':
         form = UploadImageForm(request.POST, request.FILES)
+        latest_id =  hardwareproducts.objects.all().values_list('id',flat=True)
         if form.is_valid():
+            tool_images = hardwareImages()
+            tool_images.Naam_product_id = latest_id.last()
+            tool_images.save()
             uploaded_img = form.save(commit=False)
             uploaded_img.image_data = form.cleaned_data['GereedschapImage'].file.read()
             uploaded_img.save()

@@ -28,6 +28,8 @@ class hardwareImages(models.Model):
   GereedschapImage = models.FileField()
   GereedschapImage_data = models.BinaryField(null=True)
 
+  # def __repr__(self):
+  #   return f"{self.Naam_product}"
  
   
 
