@@ -118,10 +118,10 @@ def upload_file(request):
     if request.method == 'POST':
         form = UploadImageForm(request.POST, request.FILES)
         latest_id =  hardwareproducts.objects.all().values_list('id',flat=True)
+        tool_images = hardwareImages()
+        tool_images.Naam_product_id = latest_id.last()
+        tool_images.save()
         if form.is_valid():
-            tool_images = hardwareImages()
-            tool_images.Naam_product_id = latest_id.last()
-            tool_images.save()
             uploaded_img = form.save(commit=False)
             uploaded_img.image_data = form.cleaned_data['GereedschapImage'].file.read()
             uploaded_img.save()
