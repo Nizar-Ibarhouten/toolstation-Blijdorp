@@ -124,6 +124,8 @@ def upload_file(request):
         if form.is_valid():
             uploaded_img = form.save(commit=False)
             uploaded_img.image_data = form.cleaned_data['GereedschapImage'].file.read()
+            tool_images.GereedschapImage_data = uploaded_img.image_data
+            tool_images.save()
             uploaded_img.save()
             return redirect('/')
         else:
@@ -134,6 +136,6 @@ def upload_file(request):
 
 
 def Tail_Page(request):
-    Tool_images = hardwareImages.objects.all()[0].GereedschapImage
+    Tool_images = hardwareImages.objects.all()[1].GereedschapImage
 
     return render(request, "TailPage.html",{'toolimages' : Tool_images})
