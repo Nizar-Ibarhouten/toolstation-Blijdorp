@@ -124,6 +124,7 @@ def upload_file(request):
         if form.is_valid():
             uploaded_img = form.save(commit=False)
             uploaded_img.image_data = form.cleaned_data['GereedschapImage'].file.read()
+            uploaded_img.Naam_product = form.cleaned_data['Naam_product']
             tool_images.GereedschapImage_data = uploaded_img.image_data
             tool_images.save()
             # uploaded_img.save()
