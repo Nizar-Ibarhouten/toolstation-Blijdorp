@@ -126,7 +126,7 @@ def upload_file(request):
             uploaded_img.image_data = form.cleaned_data['GereedschapImage'].file.read()
             tool_images.GereedschapImage_data = uploaded_img.image_data
             tool_images.save()
-            uploaded_img.save()
+            # uploaded_img.save()
             return redirect('/')
         else:
             form = UploadImageForm()
