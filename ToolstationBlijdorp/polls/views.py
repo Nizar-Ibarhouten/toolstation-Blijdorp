@@ -77,11 +77,20 @@ def return_json(request):
 
 def return_products(request):
     data = hardwareproducts.objects.all()
+    hardwareImages_data = hardwareImages.objects.all()
+    h_images = list(hardwareImages_data)
     hardware_list = list(data)
     new_list = []
-    print(hardware_list)
+    h_images_list = []
+    for i in h_images:
+        h_images_list.append([i.GereedschapImage.name,i.Naam_product_id])
+    
+    print(h_images_list)
     for i in hardware_list:
-        new_list.append([i.Naam,i.Prijs_inc_btw,i.Gewicht,i.Kwantiteit,i.Beschrijving])
+        new_list.append([i.id,i.Naam,i.Prijs_inc_btw,i.Gewicht,i.Kwantiteit,i.Beschrijving])
+        for k in h_images_list:
+            if k[1] == i.id:
+                new_list.append(k[0])
         
     
         
