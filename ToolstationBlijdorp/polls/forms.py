@@ -9,4 +9,4 @@ class register(forms.Form):
 class UploadImageForm(forms.ModelForm):
     class Meta:
         model = hardwareImages
-        fields = ['GereedschapImage','Naam_product']
+        fields = ['GereedschapImage']

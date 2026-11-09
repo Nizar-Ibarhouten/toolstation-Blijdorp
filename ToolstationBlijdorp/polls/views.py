@@ -121,11 +121,15 @@ def upload_file(request):
         tool_images = hardwareImages()
         tool_images.Naam_product_id = latest_id.last()
         tool_images.save()
+      
         if form.is_valid():
+            for filename, file in request.FILES.items():
+                name1 = request.FILES[filename].name
             uploaded_img = form.save(commit=False)
             uploaded_img.image_data = form.cleaned_data['GereedschapImage'].file.read()
-            uploaded_img.Naam_product = form.cleaned_data['Naam_product']
             tool_images.GereedschapImage_data = uploaded_img.image_data
+            print(name1)
+            tool_images.GereedschapImage = name1
             tool_images.save()
             # uploaded_img.save()
             return redirect('/')
