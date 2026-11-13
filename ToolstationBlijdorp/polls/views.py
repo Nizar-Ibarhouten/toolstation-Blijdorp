@@ -94,17 +94,17 @@ def return_products(request):
         #         print(k[1],i.id)
         #         new_list.append(k[0])
 
-    hardware_dict = {}
-    for k,name in enumerate(new_list):
-        # k = new_list[k][0]
-        hardware_dict[k] = name
-        hardware_dict
-        print(hardware_dict)
+    # hardware_dict = {}
+    # for k,name in enumerate(new_list):
+    #     # k = new_list[k][0]
+    #     hardware_dict[k] = name
+    #     hardware_dict
+    #     print(hardware_dict)
         
         
     
         
-    return HttpResponse(json.dumps(hardware_dict),content_type="application/json")
+    return HttpResponse(json.dumps(new_list),content_type="application/json")
 
 def store_product(request):
     column_names = [field.column for field in hardwareproducts._meta.fields]
