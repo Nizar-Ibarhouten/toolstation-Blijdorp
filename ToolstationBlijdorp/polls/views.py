@@ -82,19 +82,29 @@ def return_products(request):
     hardware_list = list(data)
     new_list = []
     h_images_list = []
-    for i in h_images:
-        h_images_list.append([i.GereedschapImage.name,i.Naam_product_id])
-    
-    print(h_images_list)
-    for i in hardware_list:
-        new_list.append([i.id,i.Naam,i.Prijs_inc_btw,i.Gewicht,i.Kwantiteit,i.Beschrijving])
-        for k in h_images_list:
-            if k[1] == i.id:
-                new_list.append(k[0])
+    for k in h_images:
+        h_images_list.append([k.GereedschapImage.name,k.Naam_product_id])
+        for i in hardware_list:
+            if i.id == k.Naam_product_id:
+                new_list.append([i.id,i.Naam,i.Prijs_inc_btw,i.Gewicht,i.Kwantiteit,i.Beschrijving,str(k.GereedschapImage)])
+                # print(h_images_list[3][0])
+
+        # for k in h_images_list:
+        #     if k[1] == i.id:
+        #         print(k[1],i.id)
+        #         new_list.append(k[0])
+
+    hardware_dict = {}
+    for k,name in enumerate(new_list):
+        # k = new_list[k][0]
+        hardware_dict[k] = name
+        hardware_dict
+        print(hardware_dict)
+        
         
     
         
-    return HttpResponse(json.dumps(new_list),content_type="application/json")
+    return HttpResponse(json.dumps(hardware_dict),content_type="application/json")
 
 def store_product(request):
     column_names = [field.column for field in hardwareproducts._meta.fields]
