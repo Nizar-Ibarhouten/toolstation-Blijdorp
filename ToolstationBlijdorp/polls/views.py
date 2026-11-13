@@ -85,7 +85,7 @@ def return_products(request):
     for k in h_images:
         h_images_list.append([k.GereedschapImage.name,k.Naam_product_id])
         for i in hardware_list:
-            if i.id == k.Naam_product_id:
+            if i.id == k.Naam_product_id and str(k.GereedschapImage) != "":
                 new_list.append([i.id,i.Naam,i.Prijs_inc_btw,i.Gewicht,i.Kwantiteit,i.Beschrijving,str(k.GereedschapImage)])
                 # print(h_images_list[3][0])
 
@@ -150,7 +150,7 @@ def upload_file(request):
             print(name1)
             tool_images.GereedschapImage = name1
             tool_images.save()
-            # uploaded_img.save()
+            uploaded_img.save()
             return redirect('/')
         else:
             form = UploadImageForm()
