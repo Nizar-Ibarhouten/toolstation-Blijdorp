@@ -147,6 +147,8 @@ def upload_file(request):
             uploaded_img = form.save(commit=False)
             uploaded_img.image_data = form.cleaned_data['GereedschapImage'].file.read()
             tool_images.GereedschapImage_data = uploaded_img.image_data
+            uploaded_img.Naam_product_id = latest_id.last()
+            
             print(name1)
             tool_images.GereedschapImage = name1
             tool_images.save()
