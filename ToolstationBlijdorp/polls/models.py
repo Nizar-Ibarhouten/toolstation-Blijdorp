@@ -25,7 +25,7 @@ class hardwareproducts(models.Model):
 
 class hardwareImages(models.Model):
   Naam_product = models.ForeignKey(hardwareproducts, on_delete=models.CASCADE)
-  GereedschapImage = models.FileField(upload_to="toolstation-Blijdorp/ToolstationBlijdorp/polls/static/images")
+  GereedschapImage = models.FileField(upload_to="static/images")
   GereedschapImage_data = models.BinaryField(null=True)
 
   # def __repr__(self):
