@@ -22,31 +22,26 @@
     <form action="/storeProduct" method="post">
       {% csrf_token %}
       <label class="label" for="name">Naam product</label>
-      <input name="Naam" id="input3" type="text" value="">
+      <input name="Naam" id="input3" type="text" value="" required>
       <br>
       <label class="label" for="name">Prijs inclusief btw</label>
-      <input name="Prijs_inc_btw" type="text" value="">
+      <input name="Prijs_inc_btw" type="text" value="" required>
       <br>
       <label class="label" for="name">gewicht</label>
-      <input name="Gewicht" type="text" value="">
+      <input name="Gewicht" type="text" value="" required>
       <br>
       <label class="label" for="name">hoeveelheid</label>
-      <input name="Kwantiteit" type="text" value="">
+      <input name="Kwantiteit" type="text" value="" required>
       <br>
       <label class="label" for="name">Beschrijving</label>
-      <input name="Beschrijving" type="text" value="">
+      <input name="Beschrijving" type="text" value="" required>
 
-      <button id="button3">submit </button>
+      <button id="button3">submit</button>
+      
     </form>
-    {% block raw %}
-    <form action="/images" enctype="multipart/form-data" method="post">
-      {% csrf_token %}
-      <table>
-        {{ form }}
-      </table>
-      <input type="submit" value="Upload"/>
+    <form action="/uploadImage">
+    <button id="button3">upload image</button>
     </form>
-    {% endblock raw %}
   </div>
   </div>
   <br>

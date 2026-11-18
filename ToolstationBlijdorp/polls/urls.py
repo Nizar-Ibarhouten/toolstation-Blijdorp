@@ -18,6 +18,6 @@ urlpatterns = [
   path("",views.Tail_Page,name="Home"),
   path("products",views.return_products,name="mid2"),
   path("storeProduct", views.store_product,name="storeProduct"),
-  path("images", views.upload_file,name="images")
-
+  path("images", views.upload_file,name="images"),
+  path("uploadImage", views.image_func,name="uploadImage")
 ]

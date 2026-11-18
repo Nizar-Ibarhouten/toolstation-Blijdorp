@@ -85,7 +85,7 @@ def return_products(request):
     for k in h_images:
         h_images_list.append([k.GereedschapImage.name,k.Naam_product_id])
         for i in hardware_list:
-            if i.id == k.Naam_product_id and str(k.GereedschapImage) != "":
+            if i.id == k.Naam_product_id and str(k.GereedschapImage) != "" and k.GereedschapImage_data != None :
                 new_list.append([i.id,i.Naam,i.Prijs_inc_btw,i.Gewicht,i.Kwantiteit,i.Beschrijving,str(k.GereedschapImage)])
                 # print(h_images_list[3][0])
 
@@ -148,7 +148,6 @@ def upload_file(request):
             uploaded_img.image_data = form.cleaned_data['GereedschapImage'].file.read()
             tool_images.GereedschapImage_data = uploaded_img.image_data
             uploaded_img.Naam_product_id = latest_id.last()
-            
             print(name1)
             tool_images.GereedschapImage = name1
             tool_images.save()
@@ -156,8 +155,8 @@ def upload_file(request):
             return redirect('/')
         else:
             form = UploadImageForm()
-        return render(request, 'homepage.html', {'form': form})
-    return render(request, 'homepage.html')
+        return render(request, 'images.html', {'form': form})
+    return render(request, 'images.html')
     
 
 
@@ -165,3 +164,7 @@ def Tail_Page(request):
     Tool_images = hardwareImages.objects.all()[1].GereedschapImage
 
     return render(request, "TailPage.html",{'toolimages' : Tool_images})
+
+def image_func(request):
+
+    return render(request,"images.html")
