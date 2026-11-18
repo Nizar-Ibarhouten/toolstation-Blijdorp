@@ -81,26 +81,34 @@ const artikel = document.getElementById("artikel")
        e.target.value == json[i][1].charAt(3)){
     console.log(json[i])
     var p = document.createElement("h3")
-    p.innerText = [json[i]]
-    p.style.backgroundColor = 'rgb(245, 243, 218)';
+    
+    p.innerText = [json[i][0],json[i][1],json[i][2],json[i][3],json[i][4],json[i][5]]
+    p.style.backgroundColor = 'Yellow';
     p.style.blockSize  = '200px'
     p.style.border = '2px solid red'
-    p.style.marginRight = '200px'
+    p.style.marginRight = '20px'
     
     var img = document.createElement("img");
+
+    let countDiv = document.createElement("div")
+    countDiv.style.backgroundColor = "red"
+    countDiv.style.marginLeft = "1000px"
+    countDiv.style.marginRight = "300px"
+    countDiv.style.marginTop = "-100px"
+    countDiv.style.padding = '3px'
+
     let countDisplay = document.createElement("p")
-    countDisplay.style.marginLeft = '1000px'
-    countDisplay.style.marginTop = "10px"
     let buttonPlus = document.createElement("button")
     let buttonMinus = document.createElement("button")
     
-
+    countDiv.appendChild(countDisplay)
     img.src = `/static/images/${json[i][6]}`;
     img.sizes = "auto"
+    img.style.marginRight = "2000px"
     buttonPlus.innerText = "+"
     buttonMinus.innerText = "-"
 
-
+    
     let count = 0;
     countDisplay.innerText = count
     function increaseCount(){
@@ -123,11 +131,11 @@ const artikel = document.getElementById("artikel")
       countDisplay.innerText = count
     })
 
-    
+  
     p.appendChild(img)
     p.appendChild(buttonPlus)
     p.appendChild(buttonMinus)
-    p.appendChild(countDisplay)
+    p.appendChild(countDiv)
     artikel.appendChild(p)
     artikel.classList.add("button2")
     
